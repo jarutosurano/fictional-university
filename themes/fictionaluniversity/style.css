@@ -1,8 +1,15 @@
 /*
     Theme Name: Fictional University
+    Theme URI: https://github.com/jarutosurano/fictional-university
     Author: Rusty Chase
+    Author URI: https://github.com/jarutosurano
+    Description: A custom WordPress theme built for the Fictional University project. This theme leverages modern WordPress features, including block theme development, full site editing, custom post types, and interactivity using JavaScript and the WP REST API. Ideal for educational institutions and learning environments.
     Version: 1.0
- */
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Text Domain: fictional-university
+*/
+
 
 body {
     background-color: #0c0c0c;
