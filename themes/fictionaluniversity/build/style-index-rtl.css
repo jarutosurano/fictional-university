@@ -93,11 +93,11 @@ li {
 }
 
 .t-left {
-  text-align: left;
+  text-align: right;
 }
 
 .t-right {
-  text-align: right;
+  text-align: left;
 }
 
 .t-center {
@@ -109,15 +109,15 @@ li {
 }
 
 .float-left {
-  float: left;
-}
-
-.float-right {
   float: right;
 }
 
+.float-right {
+  float: left;
+}
+
 .push-right {
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .container:before,
@@ -202,7 +202,7 @@ li {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 .spinner-loader {
@@ -241,7 +241,7 @@ li {
   position: relative;
   cursor: pointer;
   top: 1px;
-  margin-left: 20px;
+  margin-right: 20px;
 }
 @media (min-width: 960px) {
   .search-trigger {
@@ -325,7 +325,7 @@ li {
 
 @media (min-width: 960px) {
   .row {
-    margin-right: -50px;
+    margin-left: -50px;
   }
   .one-half,
   .one-third,
@@ -334,9 +334,9 @@ li {
   .one-fifth,
   .one-sixth {
     padding-bottom: 0;
-    float: left;
+    float: right;
     box-sizing: border-box;
-    padding-right: 50px;
+    padding-left: 50px;
   }
   .two-thirds {
     width: 66.66%;
@@ -400,7 +400,7 @@ li {
   background-color: #0D3B66;
   font-family: "Roboto", sans-serif;
   padding: 0 20px;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .note-limit-message {
@@ -418,15 +418,15 @@ li {
 
 /* Like Box */
 .generic-content .like-box {
-  float: right;
+  float: left;
   font-size: 1rem;
   background-color: #ededed;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
   color: red;
-  padding: 10px 10px 10px 25px;
+  padding: 10px 25px 10px 10px;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 0 30px 30px;
+  margin: 0 30px 30px 0;
   position: relative;
 }
 
@@ -435,17 +435,17 @@ li {
 }
 
 .like-count {
-  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .like-box .fa-heart-o {
   transition: all 0.35s ease-out;
   position: absolute;
-  left: 10px;
+  right: 10px;
 }
 
 .like-box .fa-heart {
-  left: 10px;
+  right: 10px;
   transition: all 0.4s ease-out;
   position: absolute;
   visibility: hidden;
@@ -468,7 +468,7 @@ li {
 body.login .button-primary {
   background-color: #F95738;
   border-color: #f83e1a;
-  text-shadow: 0 -1px 1px #f8320c, 1px 0 1px #f8320c, 0 1px 1px #f8320c, -1px 0 1px #f8320c;
+  text-shadow: 0 -1px 1px #f8320c, -1px 0 1px #f8320c, 0 1px 1px #f8320c, 1px 0 1px #f8320c;
   box-shadow: 0 1px 0 #ed2c07;
 }
 
@@ -477,7 +477,7 @@ body.login .button-primary:focus,
 body.login .button-primary:hover {
   background-color: #f8411d;
   border-color: #F95738;
-  text-shadow: 0 -1px 1px #ed2c07, 1px 0 1px #ed2c07, 0 1px 1px #ed2c07, -1px 0 1px #ed2c07;
+  text-shadow: 0 -1px 1px #ed2c07, -1px 0 1px #ed2c07, 0 1px 1px #ed2c07, 1px 0 1px #ed2c07;
   box-shadow: 0 1px 0 #de2907;
 }
 
@@ -513,7 +513,7 @@ body.login {
   font-weight: 300;
 }
 .btn--with-photo {
-  padding-left: 40px;
+  padding-right: 40px;
   position: relative;
 }
 .btn--orange {
@@ -536,7 +536,7 @@ body.login {
 }
 .btn--yellow {
   background-color: #F4D35E;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+  text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.22);
 }
 .btn--yellow:hover {
   background: linear-gradient(#F4D35E, #f0bb00);
@@ -582,7 +582,7 @@ body.login {
   background-color: #eee;
   padding: 8px 16px;
   display: inline-block;
-  margin-right: 7px;
+  margin-left: 7px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -727,8 +727,8 @@ body.login {
   margin: 0 !important;
   border: none !important;
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
   opacity: 0;
 }
 
@@ -736,14 +736,14 @@ body.login {
   z-index: 3;
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   padding: 20px 0;
 }
 .site-header__avatar {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 .site-header__avatar img {
   display: block;
@@ -754,8 +754,8 @@ body.login {
   visibility: hidden;
   position: absolute;
   background-color: rgba(12, 56, 97, 0.89);
-  left: 0;
   right: 0;
+  left: 0;
   top: -20px;
   padding-top: 58px;
   opacity: 0;
@@ -775,7 +775,7 @@ body.login {
     transform: translateY(0) scale(1);
     position: static;
     background-color: transparent;
-    float: right;
+    float: left;
     padding-top: 0;
     padding-bottom: 0;
     top: 0;
@@ -787,7 +787,7 @@ body.login {
   font-size: 1.2rem;
   position: absolute;
   top: 6px;
-  right: 16px;
+  left: 16px;
 }
 @media (min-width: 530px) {
   .site-header__search-trigger {
@@ -807,7 +807,7 @@ body.login {
   position: absolute;
   z-index: 10;
   top: 7px;
-  right: 46px;
+  left: 46px;
 }
 @media (min-width: 530px) {
   .site-header__menu-trigger {
@@ -821,24 +821,24 @@ body.login {
   }
 }
 .site-header__util {
-  padding: 0 0 0 20px;
+  padding: 0 20px 0 0;
 }
 @media (min-width: 960px) {
   .site-header__util {
     padding: 0;
-    float: right;
-  }
-}
-.site-header__btn {
-  margin-right: 20px;
-}
-@media (min-width: 960px) {
-  .site-header__btn {
     float: left;
   }
 }
+.site-header__btn {
+  margin-left: 20px;
+}
+@media (min-width: 960px) {
+  .site-header__btn {
+    float: right;
+  }
+}
 .site-header .btn--with-photo {
-  margin-right: 0;
+  margin-left: 0;
 }
 
 .site-footer {
@@ -869,9 +869,9 @@ body.login {
 }
 @media (min-width: 960px) {
   .site-footer__col-one {
-    text-align: left;
+    text-align: right;
     width: 33%;
-    float: left;
+    float: right;
   }
 }
 .site-footer__col-two-three-group {
@@ -881,19 +881,19 @@ body.login {
 }
 @media (min-width: 960px) {
   .site-footer__col-two-three-group {
-    text-align: left;
-    float: left;
+    text-align: right;
+    float: right;
     width: 42%;
     margin: 0;
   }
 }
 .site-footer__col-two {
   width: 50%;
-  float: left;
+  float: right;
 }
 .site-footer__col-three {
   width: 50%;
-  float: left;
+  float: right;
 }
 .site-footer__col-four {
   padding-top: 20px;
@@ -907,9 +907,9 @@ body.login {
     padding-top: 0;
     margin: 0;
     clear: none;
-    text-align: left;
+    text-align: right;
     width: 25%;
-    float: right;
+    float: left;
   }
 }
 
@@ -930,8 +930,8 @@ body.login {
 }
 @media (min-width: 960px) {
   .main-navigation {
-    float: left;
-    margin-right: 20px;
+    float: right;
+    margin-left: 20px;
   }
 }
 
@@ -940,8 +940,8 @@ body.login {
 }
 @media (min-width: 960px) {
   .main-navigation li {
-    float: left;
-    padding-left: 20px;
+    float: right;
+    padding-right: 20px;
   }
 }
 
@@ -996,8 +996,8 @@ body.login {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
 }
 .page-banner__intro {
   font-weight: 300;
@@ -1049,8 +1049,8 @@ body.login {
 .slick-dots {
   z-index: 100;
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -1074,7 +1074,7 @@ body.login {
   width: 10px;
   height: 10px;
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   border: none;
   margin: 0 4px;
@@ -1091,8 +1091,8 @@ body.login {
 .glide__bullets {
   z-index: 100;
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -1111,7 +1111,7 @@ body.login {
   width: 10px;
   height: 10px;
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   border: none;
   margin: 0 3px;
@@ -1130,8 +1130,8 @@ body.login {
   z-index: 110;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.96);
   visibility: hidden;
@@ -1157,7 +1157,7 @@ body.admin-bar .search-overlay {
   background-color: rgba(0, 0, 0, 0.12);
 }
 .search-overlay__icon {
-  margin-right: 10px;
+  margin-left: 10px;
   font-size: 1.8rem;
   color: #F95738;
 }
@@ -1182,7 +1182,7 @@ body.admin-bar .search-overlay {
 .search-overlay__close {
   position: absolute;
   top: 13px;
-  right: 16px;
+  left: 16px;
   font-size: 2.1rem;
   cursor: pointer;
   transition: all 0.3s;
@@ -1249,7 +1249,7 @@ body.admin-bar .search-overlay {
   position: relative;
   display: inline-block;
   width: 200px;
-  margin-right: 15px;
+  margin-left: 15px;
   background-color: #F95738;
   overflow: hidden;
 }
@@ -1262,7 +1262,7 @@ body.admin-bar .search-overlay {
 }
 .professor-card:hover .professor-card__image {
   opacity: 0.8;
-  transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(-4deg);
 }
 .professor-card__name {
   font-weight: 300;
@@ -1270,8 +1270,8 @@ body.admin-bar .search-overlay {
   position: absolute;
   bottom: 0;
   color: #fff;
-  left: 0;
   right: 0;
+  left: 0;
   padding: 3px 10px;
   background-color: rgba(240, 54, 19, 0.85);
 }
@@ -1415,7 +1415,7 @@ body.admin-bar .search-overlay {
 }
 @media (min-width: 960px) {
   .full-width-split__one .full-width-split__inner {
-    float: right;
+    float: left;
   }
 }
 .full-width-split__two {
@@ -1436,7 +1436,7 @@ body.admin-bar .search-overlay {
 
 .event-summary {
   position: relative;
-  padding-left: 107px;
+  padding-right: 107px;
   min-height: 77px;
   padding-bottom: 1px;
   margin-bottom: 20px;
@@ -1448,7 +1448,7 @@ body.admin-bar .search-overlay {
   text-decoration: none;
   display: block;
   top: 0;
-  left: 0;
+  right: 0;
   position: absolute;
   padding: 14px 0 11px 0;
   color: #FFF;
@@ -1457,7 +1457,7 @@ body.admin-bar .search-overlay {
   width: 80px;
   line-height: 1;
   transition: opacity 0.33s;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+  text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.22);
 }
 .event-summary__date:hover {
   opacity: 0.75;
@@ -1485,9 +1485,9 @@ body.admin-bar .search-overlay {
 }
 @media (min-width: 767px) {
   .page-links {
-    margin: 0 0 40px 20px;
+    margin: 0 20px 40px 0;
     width: 300px;
-    float: right;
+    float: left;
   }
 }
 .page-links__title {
@@ -1561,7 +1561,7 @@ body.admin-bar .search-overlay {
   padding: 10px 15px;
   display: inline-block;
   margin-bottom: 30px;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: -2px 2px 1px rgba(0, 0, 0, 0.07);
 }
 .metabox--position-up {
   position: absolute;
@@ -1572,7 +1572,7 @@ body.admin-bar .search-overlay {
   padding: 0;
 }
 .metabox__main {
-  padding: 10px 15px 10px 11px;
+  padding: 10px 11px 10px 15px;
 }
 .metabox p {
   margin: 0;
@@ -1592,7 +1592,7 @@ body.admin-bar .search-overlay {
   color: #fff;
   display: inline-block;
   padding: 10px 15px;
-  border-radius: 3px 0 0 3px;
+  border-radius: 0 3px 3px 0;
   font-weight: normal;
 }
 .metabox .metabox__blog-home-link:hover {
@@ -1609,5 +1609,3 @@ body.admin-bar .search-overlay {
   border-bottom: none;
   margin-bottom: 0;
 }
-
-/*# sourceMappingURL=style-index.css.map*/
