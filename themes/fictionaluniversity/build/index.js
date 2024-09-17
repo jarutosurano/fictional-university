@@ -327,6 +327,7 @@ class Search {
     this.searchField.val(''); // Clear search field
     setTimeout(() => this.searchField.focus(), 301); // Focus search field with slight delay
     this.isOverlayOpen = true;
+    return false;
   }
 
   // Close the search overlay and restore body scrolling
