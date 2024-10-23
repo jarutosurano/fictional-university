@@ -1,43 +1,92 @@
 <?php
+function university_post_types() {
+    // Campus Post Type
+    register_post_type('campus', array(
+        'capability_type' => 'campus',
+        'map_meta_cap' => true,
+        'supports' => array( 'title', 'editor', 'excerpt'),
+        'rewrite' => array('slug' => 'campuses'),
+        'has_archive' => true,
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Campuses',
+            'add_new_item' => 'Add New Campus',
+            'edit_item' => 'Edit Campus',
+            'all_items' => 'All Campuses',
+            'singular_name' => 'Campus'
+        ),
+        'menu_icon' => 'dashicons-location-alt'
+    ));
 
-// Redirect to homepage if the user is not logged in
-if (!is_user_logged_in()) {
-    wp_redirect(esc_url(home_url()));
-    exit;
+    // Events Post Type
+    register_post_type('event', array(
+        'capability_type' => 'event',
+        'map_meta_cap' => true,
+        'supports' => array( 'title', 'editor', 'excerpt'),
+        'rewrite' => array('slug' => 'events'),
+        'has_archive' => true,
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Events',
+            'add_new_item' => 'Add New Event',
+            'edit_item' => 'Edit Event',
+            'all_items' => 'All Events',
+            'singular_name' => 'Event'
+        ),
+        'menu_icon' => 'dashicons-calendar-alt'
+    ));
+
+    // Program Post Type
+    register_post_type('program', array(
+        'supports' => array( 'title'),
+        'rewrite' => array('slug' => 'programs'),
+        'has_archive' => true,
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Programs',
+            'add_new' => 'Add New Program',
+            'edit_item' => 'Edit Program',
+            'all_items' => 'All Programs',
+            'singular_name' => 'Program'
+        ),
+        'menu_icon' => 'dashicons-awards'
+    ));
+
+    // Professor Post Type
+    register_post_type('professor', array(
+        'supports' => array( 'title', 'editor', 'thumbnail'),
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Professors',
+            'add_new' => 'Add New Professor',
+            'edit_item' => 'Edit Professor',
+            'all_items' => 'All Professors',
+            'singular_name' => 'Professor'
+        ),
+        'menu_icon' => 'dashicons-welcome-learn-more'
+    ));
+
+    // Note Post Type
+    register_post_type('note', array(
+        'show_in_rest' => true,
+        'supports' => array( 'title', 'editor'),
+        'public' => false,
+        'show_ui' => true,
+        'labels' => array(
+            'name' => 'Notes',
+            'add_new' => 'Add New Note',
+            'edit_item' => 'Edit Note',
+            'all_items' => 'All Notes',
+            'singular_name' => 'Note'
+        ),
+        'menu_icon' => 'dashicons-welcome-write-blog'
+    ));
 }
 
-get_header();
+add_action('init', 'university_post_types');
 
-while (have_posts()) {
-    the_post();
-    pageBanner();
-    ?>
-
-    <div class="container container--narrow page-section">
-        <ul class="min-list link-list" id="my-notes">
-            <?php
-            // Query to get all notes for the logged-in user
-            $userNotes = new WP_Query(array(
-                'post_type' => 'note',  // Fixed post type name from 'notes' to 'note'
-                'posts_per_page' => -1, // Corrected 'post_per_page' to 'posts_per_page'
-                'author' => get_current_user_id()
-            ));
-
-            // Loop through each note
-            while ($userNotes->have_posts()) {
-                $userNotes->the_post(); ?>
-                <li>
-                    <input class="note-title-field" value="<?php echo esc_attr(get_the_title()); ?>">
-                    <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
-                    <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
-                    <textarea class="note-body-field"><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>
-                </li>
-            <?php }
-            wp_reset_postdata(); // Reset post data after custom query
-            ?>
-        </ul>
-    </div>
-<?php }
-
-get_footer();
 ?>
