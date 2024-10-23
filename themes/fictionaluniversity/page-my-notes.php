@@ -1,57 +1,43 @@
 <?php
-	get_header();
 
-	while(have_posts()) {
-		the_post();
-        pageBanner();
-        ?>
+// Redirect to homepage if the user is not logged in
+if (!is_user_logged_in()) {
+    wp_redirect(esc_url(home_url()));
+    exit;
+}
 
-        <div class="container container--narrow page-section">
+get_header();
+
+while (have_posts()) {
+    the_post();
+    pageBanner();
+    ?>
+
+    <div class="container container--narrow page-section">
+        <ul class="min-list link-list" id="my-notes">
             <?php
-                $theParent = wp_get_post_parent_id(get_the_ID());
+            // Query to get all notes for the logged-in user
+            $userNotes = new WP_Query(array(
+                'post_type' => 'note',
+                'posts_per_page' => -1,
+                'author' => get_current_user_id()
+            ));
 
-                if ($theParent) { ?>
-                    <div class="metabox metabox--position-up metabox--with-home-link">
-                        <p>
-                            <a class="metabox__blog-home-link" href="<?php echo get_permalink($theParent); ?>">
-                                <i class="fa fa-home" aria-hidden="true"></i>  Back to <?php echo get_the_title($theParent); ?></a>
-                            <span class="metabox__main"><?php the_title(); ?></span>
-                        </p>
-                    </div>
-                <?php }
+            // Loop through each note
+            while ($userNotes->have_posts()) {
+                $userNotes->the_post(); ?>
+                <li>
+                    <input class="note-title-field" value="<?php echo esc_attr(get_the_title()); ?>">
+                    <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
+                    <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
+                    <textarea class="note-body-field"><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>
+                </li>
+            <?php }
+            wp_reset_postdata(); // Reset post data after custom query
             ?>
+        </ul>
+    </div>
+<?php }
 
-            <?php
-                $getChildOf = get_pages(array(
-                   'child_of' => get_the_ID()
-                ));
-
-                if($theParent or $getChildOf) { ?>
-                    <div class="page-links">
-                        <h2 class="page-links__title"><a href="<?php echo get_permalink($theParent); ?>"><?php echo get_the_title($theParent); ?></a></h2>
-                        <ul class="min-list">
-                            <?php
-                            if($theParent) {
-                                $findChildrenOf = $theParent;
-                            } else {
-                                $findChildrenOf = get_the_ID();
-                            }
-                            ?>
-                            <?php wp_list_pages(array(
-                                'title_li' => '',
-                                'child_of' => $findChildrenOf,
-                                'sort_column' => 'menu_order'
-                            )); ?>
-                        </ul>
-                    </div>
-                <?php } ?>
-
-
-            <div class="generic-content">
-                <?php the_content(); ?>
-            </div>
-        </div>
-	<?php }
-
-   get_footer();
+get_footer();
 ?>
