@@ -118,3 +118,32 @@ function universityMapKey($api) {
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'universityMapKey');
+
+// Redirect subscriber accounts away from the admin dashboard to the homepage
+add_action('admin_init', 'redirectSubscribersToFrontend');
+
+function redirectSubscribersToFrontend() {
+    // Get the current user object
+    $currentUser = wp_get_current_user();
+
+    // Check if the user has the 'subscriber' role
+    if (count($currentUser->roles) === 1 && $currentUser->roles[0] === 'subscriber') {
+        // Redirect the subscriber to the homepage
+        wp_redirect(site_url('/'));
+        exit;
+    }
+}
+
+// Disable the admin bar for subscriber accounts
+add_action('wp_loaded', 'disableAdminBarForSubscribers');
+
+function disableAdminBarForSubscribers() {
+    // Get the current user object
+    $currentUser = wp_get_current_user();
+
+    // Check if the user has the 'subscriber' role
+    if (count($currentUser->roles) === 1 && $currentUser->roles[0] === 'subscriber') {
+        // Hide the admin bar for subscribers
+        show_admin_bar(false);
+    }
+}
