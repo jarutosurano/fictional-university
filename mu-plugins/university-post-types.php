@@ -2,6 +2,8 @@
 function university_post_types() {
     // Campus Post Type
     register_post_type('campus', array(
+        'capability_type' => 'campus',
+        'map_meta_cap' => true,
         'supports' => array( 'title', 'editor', 'excerpt'),
         'rewrite' => array('slug' => 'campuses'),
         'has_archive' => true,
@@ -9,7 +11,7 @@ function university_post_types() {
         'show_in_rest' => true,
         'labels' => array(
             'name' => 'Campuses',
-            'add_new' => 'Add New Campus',
+            'add_new_item' => 'Add New Campus',
             'edit_item' => 'Edit Campus',
             'all_items' => 'All Campuses',
             'singular_name' => 'Campus'
@@ -19,6 +21,8 @@ function university_post_types() {
 
     // Events Post Type
     register_post_type('event', array(
+        'capability_type' => 'event',
+        'map_meta_cap' => true,
         'supports' => array( 'title', 'editor', 'excerpt'),
         'rewrite' => array('slug' => 'events'),
         'has_archive' => true,
@@ -26,7 +30,7 @@ function university_post_types() {
         'show_in_rest' => true,
         'labels' => array(
             'name' => 'Events',
-            'add_new' => 'Add New Event',
+            'add_new_item' => 'Add New Event',
             'edit_item' => 'Edit Event',
             'all_items' => 'All Events',
             'singular_name' => 'Event'
@@ -58,7 +62,7 @@ function university_post_types() {
         'show_in_rest' => true,
         'labels' => array(
             'name' => 'Professors',
-            'add_new' => 'Add New Professor',
+            'add_new_item' => 'Add New Professor',
             'edit_item' => 'Edit Professor',
             'all_items' => 'All Professors',
             'singular_name' => 'Professor'
