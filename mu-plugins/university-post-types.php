@@ -72,7 +72,7 @@ function university_post_types() {
 
     // Note Post Type
     register_post_type('note', array(
-        'show_in_rest' => true,
+        'show_in_rest' => true, // Enable REST API access at http://fictional-university.local/wp-json/wp/v2/note
         'supports' => array( 'title', 'editor'),
         'public' => false,
         'show_ui' => true,
