@@ -1,0 +1,107 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Word Counter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-25 04:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.14; wp-6.7.1\n"
+"X-Domain: cwcdomain"
+
+#: callme-wordcounter.php:59
+msgid " characters."
+msgstr ""
+
+#: callme-wordcounter.php:66
+msgid " to read."
+msgstr ""
+
+#: callme-wordcounter.php:54
+msgid " words."
+msgstr ""
+
+#: callme-wordcounter.php:65
+msgid "1 minute"
+msgstr ""
+
+#: callme-wordcounter.php:198
+msgid "Beginning of Post"
+msgstr ""
+
+#: callme-wordcounter.php:132
+msgid "Character Count"
+msgstr ""
+
+#: callme-wordcounter.php:92
+msgid "Display Location"
+msgstr ""
+
+#: callme-wordcounter.php:164
+msgid "Display location must be either beginning or end."
+msgstr ""
+
+#. Description of the plugin
+msgid "Easily count words and characters in your posts and pages."
+msgstr ""
+
+#: callme-wordcounter.php:201
+msgid "End of Post"
+msgstr ""
+
+#: callme-wordcounter.php:105
+msgid "Headline Text"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://jarutosurano.io"
+msgstr ""
+
+#. Author of the plugin
+msgid "jarutosurano"
+msgstr ""
+
+#: callme-wordcounter.php:65
+msgid "minute"
+msgstr ""
+
+#: callme-wordcounter.php:65
+msgid "minutes"
+msgstr ""
+
+#: callme-wordcounter.php:45 callme-wordcounter.php:112
+msgid "Post Statistics"
+msgstr ""
+
+#: callme-wordcounter.php:146
+msgid "Read Time"
+msgstr ""
+
+#: callme-wordcounter.php:54 callme-wordcounter.php:59
+msgid "This post has "
+msgstr ""
+
+#: callme-wordcounter.php:66
+msgid "This post will take about "
+msgstr ""
+
+#. Page title
+#: callme-wordcounter.php:118 callme-wordcounter.php:211
+msgid "Word Count"
+msgstr ""
+
+#: callme-wordcounter.php:210 callme-wordcounter.php:223
+msgid "Word Count Settings"
+msgstr ""
+
+#. Name of the plugin
+msgid "Word Counter"
+msgstr ""
