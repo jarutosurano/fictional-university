@@ -107,7 +107,7 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 		 */
 		public function register_scripts() {
 			// Extract vars.
-			$suffix  = defined( 'SCF_DEVELOPMENT_MODE' ) && SCF_DEVELOPMENT_MODE ? '' : '.min';
+			$suffix  = defined( 'ACF_DEVELOPMENT_MODE' ) && ACF_DEVELOPMENT_MODE ? '' : '.min';
 			$version = acf_get_setting( 'version' );
 
 			// Register scripts.
@@ -474,8 +474,8 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 				'post_id'     => acf_get_form_data( 'post_id' ),
 				'validation'  => acf_get_form_data( 'validation' ),
 				'editor'      => acf_is_block_editor() ? 'block' : 'classic',
-				'is_pro'      => false,
-				'debug'       => acf_is_beta() || ( defined( 'SCF_DEVELOPMENT_MODE' ) && SCF_DEVELOPMENT_MODE ),
+				'is_pro'      => acf_is_pro(),
+				'debug'       => acf_is_beta() || ( defined( 'ACF_DEVELOPMENT_MODE' ) && ACF_DEVELOPMENT_MODE ),
 			);
 
 			acf_localize_data( $data_to_localize );

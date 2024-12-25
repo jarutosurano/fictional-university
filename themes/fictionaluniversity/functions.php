@@ -55,7 +55,7 @@ function university_files() {
     // Localize root URL for use in JavaScript
     wp_localize_script('main-university-js', 'universityLocalize', array(
         'root_url' => get_site_url(),
-        'none' => wp_create_nonce('wp-rest') // Generate a nonce for secure REST API requests
+        'nonce' => wp_create_nonce('wp_rest') // Generate a nonce for secure REST API requests
     ));
 }
 add_action('wp_enqueue_scripts', 'university_files');
