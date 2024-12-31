@@ -18,7 +18,7 @@ class FixStagingImageLinks
     function __construct()
     {
         add_action('admin_menu', [$this, 'adminPage']); // Add menu page for the plugin
-        add_action('wp_footer', 'fix_staging_image_links_enqueue_scripts', 99999);
+        add_action('wp_footer', [$this, 'fix_staging_image_links_enqueue_scripts'], 99999);
     }
 
     function adminPage()
